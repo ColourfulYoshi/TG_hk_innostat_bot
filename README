@@ -1,5 +1,7 @@
 python 3.9
-insert all the files presented (except for README) into a pycharm project
+insert all the files presented (except for README) into a pycharm project and set the bot token to yours to test
+
+run main.py in order to start the bot
 
 libraries used:
 - python-telegram-bot (v21.3)
