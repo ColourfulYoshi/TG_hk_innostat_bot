@@ -1,5 +1,7 @@
-libraries used:
+python 3.9
+insert all the files presented (except for README) into a pycharm project
 
-python-telegram-bot (v21.3)
-python-dotenv (v1.0.1)
-requests (v2.32.3)
+libraries used:
+- python-telegram-bot (v21.3)
+- python-dotenv (v1.0.1)
+- requests (v2.32.3)
