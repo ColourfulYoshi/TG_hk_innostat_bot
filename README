@@ -1,3 +1,5 @@
+bot: t.me/hk_innostat_bot
+
 python 3.9
 insert all the files presented (except for README) into a pycharm project and set the bot token to yours to test
 
