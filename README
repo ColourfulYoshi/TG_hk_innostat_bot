@@ -1,0 +1,5 @@
+libraries used:
+
+python-telegram-bot (v21.3)
+python-dotenv (v1.0.1)
+requests (v2.32.3)
