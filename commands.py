@@ -87,7 +87,7 @@ async def statistics_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 				
 				try:
 					t_data = requests.get(constants.get_url("task", str(task.get("task_id"))))
-				except TimeoutError:
+				except (TimeoutError, requests.exceptions.ConnectionError):
 					await update.effective_chat.send_message("⚠️ Плохое подключение к интернету. Неудалось получить информацию"
 															 f" о задании с *ID* {task.get('task_id')}",
 															 parse_mode=ParseMode.MARKDOWN)
