@@ -85,7 +85,13 @@ async def statistics_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 				replacements["<average_point_difference>"].append(task.get("real_points") - task.get("points"))
 				replacements["<average_time_between_attempts>"].append(average_time / task.get("attempts"))
 				
-				t_data = requests.get(constants.get_url("task", str(task.get("task_id"))))
+				try:
+					t_data = requests.get(constants.get_url("task", str(task.get("task_id"))))
+				except TimeoutError:
+					await update.effective_chat.send_message("⚠️ Плохое подключение к интернету. Неудалось получить информацию"
+															 f" о задании с *ID* {task.get('task_id')}",
+															 parse_mode=ParseMode.MARKDOWN)
+					continue
 				if t_data.status_code != 200:
 					if t_data.status_code == 404:
 						await update.effective_chat.send_message(f"⚠️ Задание c *ID* `{task.get('task_id')}` "
